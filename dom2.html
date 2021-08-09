@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>dom2</title>
+</head>
+<body>
+  <p>Hi</p>
+  <p>Hello</p>
+  <p>Whts's up</p>
+  <button onclick="myfunction()">Click me</button>
+  <script>
+      function myfunction()
+      {
+          var arr = document.getElementsByTagName("p");
+          for(let i = 0 ; i < arr.length ; i++){
+              arr[i].innerHTML = "Hi There:";
+          }
+      }
+  </script>
+  
+
+</body>
+</html>

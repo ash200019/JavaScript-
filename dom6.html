@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+    <button onclick="newParagraph()">Add new Paragraph</button>
+    <div id = "demo">Some Text</div>
+</body>
+<script>
+        function newParagraph(){
+        var p = document.createElement("p");
+        var node = document.createTextNode("Some new text");
+        p.appendChild(node);
+        var div = document.getElementById("demo");
+        div.appendChild(p);
+    }
+</script>
+</html>

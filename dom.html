@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>dom</title>
+</head>
+<body>
+ <p id = "demo"><</p>;
+<<p id = "demo2"><</p>;
+<h3> </h3>
+<h3> </h3>
+<h3> </h3>
+<h3> </h3>
+<script>
+  document.getElementById("demo").innerHTML = "Hello World";
+  document.getElementById("demo2").innerHTML = "Hello Universe";
+  var arr = document.getElementsByTagName("h3");
+  for(let i = 0 ; i < arr.length ; i++){
+    arr[i].innerHTML = "Pikachu";
+  }
+  
+</script>
+</body>
+</html>
