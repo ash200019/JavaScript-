@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prints Time</title>
+  <script>
+    function printTime(){
+      var d = new Date();
+      var hours = d.getHours();
+      var mins = d.getMinutes();
+      var secs = d.getSeconds();
+      var elem = document.getElementById("demo");
+      elem.innerHTML = hours+":"+mins+":"+secs;
+    }
+  </script>
+</head>
+<body>
+  <h3>Shows time</h3>
+  <p>-------------------------</p>
+  <p id="demo"></p>
+  <p>-------------------------</p>
+  <script>setInterval(printTime,1000);</script>
+</body>
+</html>

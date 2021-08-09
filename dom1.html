@@ -3,20 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>dom1</title>
+  <title>Document</title>
 </head>
 <body>
-  <h3 class="demo">Blue</h3>;
-  <h4 class="demo">Red</h4>;
-  <h5 class="demo">Green</h5>;
-  <button onclick="myfunction()">Click me</button>
+  <h3 class="demo">Blue</h3>
+  <h4 class="demo">Red</h4>
+  <h5 class="demo">Green</h5>
+  <button onclick="myFunction()">Click Me</button>
   <script>
-      function myfunction(){
-      var arr = document.getElementsByClassName("demo");
-      arr[0].innerHTML = "Ash"
-      arr[2].innerHTML = "Serena"
-      arr[3].innerHTML = "Dawn"
-      }
+    function myFunction(){
+     var arr = document.getElementsByClassName("demo");
+    //accessing the second element
+    arr[1].innerHTML = "Welcome";
+}
   </script>
 </body>
 </html>
