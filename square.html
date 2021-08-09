@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Squares and Cubes</title>
+    <style>
+        body {
+            background-color: darkgrey;  
+        }
+
+        h1 {
+            border: 2px beige solid; 
+            color: greenyellow;
+            font-family: "Cairo";
+        }
+
+
+        form {
+            margin-top: 40px;
+            margin-left: 40px;
+            
+        }
+        
+        form input {
+            height: 40px;
+            width: 50%;
+            font-size: 25px;
+            margin-bottom: 20px;
+        }
+        
+        form input:hover {
+            background-color: beige;
+            border-bottom-color: brown;
+        }
+        
+        form input:active {
+            background-color: darkblue;
+            border-bottom-color: lightgoldenrodyellow;
+            color: greenyellow;
+        }
+        
+        form input#but {
+            height: 40px;
+            width: auto;
+            border-style: ridge;
+            margin-top: 30px;
+            margin-bottom: 50px;
+            font-size: 30px;
+        }
+        
+        form input#but:hover {
+            background-color: chocolate;
+            color: azure;
+        }
+        
+        form input#but:active {
+            background-color: darkblue;
+            color: greenyellow;
+            border: greenyellow;
+        }
+
+        form label {
+            font-size: 30px;
+        }
+        
+        #result {
+            font-size: 25px;
+            align-items: center;
+        }
+       
+    </style>
+</head>
+<body>
+    <h1 align = "center">Find The Squares and Cubes</h1>
+    <form>
+        <label for="num1">
+            Lower Limit:
+        </label>
+        <input type="number" name="Num1" id="num1" value="5">
+        
+        <br/>
+        <label for="num2">
+            Upper Limit:
+        </label>
+        <input type="number" name="Num2" id="num2" value="15">
+
+        <br>
+        <input type="button" id = "but" value="Submit" onclick="result()">
+    </form>
+    <br>
+    <div id="result">
+
+    </div>
+    <script>
+        function result(){
+            document.getElementById("result").innerHTML="";
+            var n1 = document.getElementById("num1").value;
+            var n2 = document.getElementById("num2").value;
+            n1 = parseInt(n1);
+            n2 = parseInt(n2);
+            if(n2 < n1){
+                alert("Lower Limit > Upper Limit");
+                location.reload();
+            }
+            else if(n1 < 0){
+                alert("Lower Limit Must Be Greater Than Zero");
+                location.reload();
+            }
+
+
+
+            var table = document.createElement("TABLE");
+            table.setAttribute("id","mytable");
+            table.setAttribute("border","2");
+            table.setAttribute("align","center");
+
+
+            document.getElementById("result").appendChild(table);
+
+            var x= document.createElement("TR");
+            table.appendChild(x);
+
+            var y = document.createElement("TD");
+            var z = document.createTextNode("Number");
+            y.appendChild(z);
+            x.appendChild(y);
+            y.setAttribute("bgcolor","black");
+            y.setAttribute("style","color:white");
+
+            y = document.createElement("TD");
+            z = document.createTextNode("Square");
+            y.appendChild(z);
+            x.appendChild(y);
+            y.setAttribute("bgcolor","black");
+            y.setAttribute("style","color:white");
+
+            y = document.createElement("TD");
+            z = document.createTextNode("Cube");
+            y.appendChild(z);
+            x.appendChild(y);
+            y.setAttribute("bgcolor","black");
+            y.setAttribute("style","color:white");
+
+            var n = n1;
+            do{
+                var x= document.createElement("TR");
+                table.appendChild(x);
+
+                var y = document.createElement("TD");
+                var z = document.createTextNode(n);
+                y.appendChild(z);
+                x.appendChild(y);
+                y.setAttribute("bgcolor","#FAF7BC");
+
+                y = document.createElement("TD");
+                z = document.createTextNode(n*n);
+                y.appendChild(z);
+                x.appendChild(y);
+                y.setAttribute("bgcolor","white");
+
+                y = document.createElement("TD");
+                z = document.createTextNode(n*n*n);
+                y.appendChild(z);
+                x.appendChild(y);
+                y.setAttribute("bgcolor","white");
+                
+                n++;
+            }while(n <=n2);
+            
+        }
+    </script>
+</body>
+</html>

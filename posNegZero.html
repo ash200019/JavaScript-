@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Types of Integer in Array</title>
+
+    <style>
+        body {
+            background-color: darkslateblue;  
+        }
+        
+        h1 {
+            border: 2px beige solid; 
+            color: bisque;
+            font-family: "Cairo";
+        }
+
+        form {
+           font-size: 30px; 
+        }
+
+        form input {
+            height: 40px;
+            width: 50%;
+            font-size: 25px;
+        }
+        
+        form input:hover {
+            background-color: beige;
+            border-bottom-color: brown;
+        }
+        
+        form input:active {
+            background-color: darkgrey;
+            border-bottom-color: lightgoldenrodyellow;
+            color: bisque;
+        }
+
+        form input#btn1,input#btn3,input#btn2  {
+            height: 40px;
+            width: auto;
+            border-style: ridge;
+            margin-top: 30px;
+            margin-bottom: 50px;
+            font-size: 30px;
+        }
+        
+        form input#btn1:hover,input#btn3:hover,input#btn2  {
+            background-color: chocolate;
+            color: azure;
+        }
+        
+        form input#btn1:active,input#btn3:hover,input#btn2  {
+            background-color: darkblue;
+            color: greenyellow;
+            border: greenyellow;
+        }
+
+        #table1{
+            font-size: 30px;
+            color: blanchedalmond;
+        }
+
+        label,#Positive,#Negative,#Zero{
+            font-size: 30px;
+            color: darkgrey;
+        }
+    </style>
+
+</head>
+<body>
+	<div>
+		<h1 align="center">Counting Numbers</h1>
+    <form action="#">
+        <label for="num1">
+            Total number of elements
+        </label>
+        <input type="number" name="Num1" id="num1">
+        
+        <br/>
+
+        <br/>
+        <input type="button" value="Submit" onclick="check()" id="btn1">
+        <input type="button" value="Clear" onclick="window.location.reload();" id="btn3">
+    </form>
+        <div id="table1">
+
+        </div>
+        <h3 id="result">
+            <div id="Positive"></div>
+            <div id="Negative"></div>
+            <div id ="Zero"></div>
+        </h3>
+    </div>
+            <script>
+             
+            function check(){
+                var n1 = document.getElementById("num1");
+
+                if(n1.value < 1 || n1.value == null){
+                    alert("Enter Valid Number!!");
+                }
+                
+                n1.setAttribute("disabled","true");
+                
+                var button1 = document.getElementById("btn1");
+                button1.setAttribute("disabled","true");
+                var length = parseInt(n1.value);
+                var table = document.createElement("TABLE");
+            table.setAttribute("id","mytable");
+
+            document.getElementById("table1").appendChild(table);
+
+            var x= document.createElement("TR");
+            table.appendChild(x);
+
+            var y = document.createElement("TH");
+            var z = document.createTextNode("Number");
+            y.appendChild(z);
+            x.appendChild(y);
+
+            y = document.createElement("TH");
+            z = document.createTextNode("Input");
+            y.appendChild(z);
+            x.appendChild(y);
+                for(var i =1;i<=length;++i){
+                    var x= document.createElement("TR");
+                    table.appendChild(x);
+
+                var y = document.createElement("TD");
+                var z = document.createTextNode("Input "+i);
+                y.appendChild(z);
+                x.appendChild(y);
+
+                y = document.createElement("TD");
+                z = document.createElement("input");
+                z.setAttribute("type","number");
+                z.setAttribute("id","input"+i);
+                z.setAttribute("value","0");
+                y.appendChild(z);
+                x.appendChild(y);
+                }
+                var x= document.createElement("TR");
+                table.appendChild(x);
+                y= document.createElement("TD");
+                x.appendChild(y);
+
+                z = document.createElement("input");
+                z.setAttribute("type","button");
+                z.setAttribute("value","Go");
+                z.setAttribute("id","btn2");
+                z.setAttribute("onclick","working()");
+                y.appendChild(z);
+                x.appendChild(y);
+            }
+            function working(){
+                var n1 = document.getElementById("num1").value;
+                n1 = parseInt(n1);
+                var go = document.getElementById("btn2");
+                go.setAttribute("disabled","true");
+                var pos=0,neg=0,zero =0;
+                for(var i=1;i<=n1;++i){
+                    var node = document.getElementById("input"+i);
+                    
+                    node = parseInt(node.value);
+                    if(node > 0){
+                        pos++;
+                    }
+                    else if(node == 0){
+                        zero++;
+                    }
+                    else{
+                        neg++;
+                    }
+                }
+                var positive = document.getElementById("Positive");
+                var txt = document.createTextNode("Number of Positive Integers: "+pos);
+                positive.appendChild(txt);
+                
+                var negative = document.getElementById("Negative");
+                var txt = document.createTextNode("Number of Negative Integers: "+neg);
+                negative.appendChild(txt);
+                
+                var zeros = document.getElementById("Zero");
+                var txt = document.createTextNode("Number of Zero: "+zero);
+                zeros.appendChild(txt);
+            }
+            function clear(){
+                
+            }
+        </script>
+</body>
+</html>
