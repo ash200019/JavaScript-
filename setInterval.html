@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+    <button onclick="myFunction()">Stop Alert</button>
+    <script>
+        var myVar = setInterval(myAlert , 3000);
+        function myAlert(){
+            alert("hi");
+        }
+        function myFunction(){
+            clearInterval(myVar);
+        }
+    </script>
+
+</body>
+</html>

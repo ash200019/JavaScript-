@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>dom3</title>
+</head>
+<body>
+  
+    <div id = "demo">
+        <p>Some Text</p>
+        <p>Some other text</p>
+        <button onclick="myfunction()">Change Text</button>
+        <script>
+            function myfunction(){
+                var a = document.getElementById("demo");
+                var arr = a.childNodes;
+                for(let i = 0 ; i < arr.length ; i++){
+                    arr[i].innerHTML = "New Text";
+                }
+            }
+            
+        </script>
+    </div>
+</body>
+</html>
